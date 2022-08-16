@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Encriptador de texto</title>
+</head>
+<body>
+    <header>
+        <h1>Encriptador de texto</h1>
+    </header>
+    <main>
+        <section class="seccion seccion-principal">
+            <div class="seccion-principal__div-input">
+                <p>Solo se permiten letras sin acentos</p>
+                <textarea type="text" placeholder="Ingrese su texto aquí" id="containerTexto" cols="50" rows="5"></textarea>
+            </div>
+            <div class="seccion-principal__div-botones">
+                <button id="btnEncriptar">Encriptar</button>
+                <button id="btnDesencriptar">Desencriptar</button>
+            </div>
+        </section>
+        <section class="seccion seccion-resultado">
+            <div class="seccion-resultado__div-aviso">
+                <h3>Ningún mensaje fue encontrado</h3>
+                <p>Ingresa un mensaje para encriptarlo o desencriptarlo.</p>
+            </div>
+            <p id="containerResultado"></p>
+            <div class="seccion__div-image">
+                <img src="images/streamlinehq-get-inspired-bruxelles-999.SVG" alt="">
+            </div>
+            <button id="copiarTexto">Copiar</button>
+        </section>
+    </main>
+    <footer>
+        <p>Hecho por Mateo Ozino Caligaris como parte del programa Oracle ONE</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
