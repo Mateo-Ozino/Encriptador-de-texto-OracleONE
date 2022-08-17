@@ -4,22 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Script para el correcto funcionamiento de Font Awesome -->
+    <script src="https://kit.fontawesome.com/2236dd94c9.js" crossorigin="anonymous"></script>
+    <!-- Css principal -->
     <link rel="stylesheet" href="style.css">
     <title>Encriptador de texto</title>
 </head>
 <body>
+    <!-- Encabezado -->
     <header>
         <h1>Encriptador de texto</h1>
     </header>
+    <!-- Contenido principal -->
     <main>
         <section class="seccion seccion-principal">
             <div class="seccion-principal__div-input">
-                <p>Solo se permiten letras sin acentos</p>
+                <div class="seccion-principal__div-info">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <p>Solo se permiten letras sin acentos</p>
+                </div>
                 <textarea type="text" placeholder="Ingrese su texto aquí" id="containerTexto" cols="50" rows="5"></textarea>
             </div>
             <div class="seccion-principal__div-botones">
-                <button id="btnEncriptar">Encriptar</button>
-                <button id="btnDesencriptar">Desencriptar</button>
+                <button id="btnEncriptar" class="btn btn-encriptar">Encriptar</button>
+                <button id="btnDesencriptar" class="btn btn-desencriptar">Desencriptar</button>
             </div>
         </section>
         <section class="seccion seccion-resultado">
@@ -31,13 +39,15 @@
             <div class="seccion__div-image">
                 <img src="images/streamlinehq-get-inspired-bruxelles-999.SVG" alt="">
             </div>
-            <button id="copiarTexto">Copiar</button>
+            <button id="copiarTexto" class="btn btn-copiar">Copiar</button>
         </section>
     </main>
+    <!-- Pie de página -->
     <footer>
         <p>Hecho por Mateo Ozino Caligaris como parte del programa Oracle ONE</p>
     </footer>
 
+    <!-- Script principal -->
     <script src="main.js"></script>
 </body>
 </html>

@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 img {
@@ -20,24 +23,47 @@ main {
     align-items: center;
     gap: 1rem;
     margin: 1rem;
+    padding-top: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
 }
 
 .seccion {
     font-size: larger;
-    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     padding: 1rem;
+    box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.51);
+    -webkit-box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.51);
+    -moz-box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.51);
 }
 
 .seccion-principal {
-    gap: 12rem;
-    height: 70vh;
+    width: 70%;
+    gap: 6rem;
     background-color: azure;
     border-radius: 15px;
+}
+
+.seccion-principal__div-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.seccion-principal__div-info > p {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    user-select: none;
 }
 
 .seccion-principal__div-input {
@@ -55,6 +81,7 @@ main {
     border: none;
     background: none;
     text-align: center;
+    font-size: 23px;
 }
 
 .seccion-principal__div-input > input:active {
@@ -69,24 +96,68 @@ main {
 }
 
 .seccion-resultado {
-    height: 70vh;
+    width: 30%;
     background-color: azure;
     border-radius: 15px;
 }
 
+.seccion-resultado-nueva {
+    gap: 16rem;
+}
+
+.seccion-resultado__div-aviso {
+    text-align: center;
+    user-select: none;
+}
+
 #containerResultado {
     text-align: center;
+    font-size: 25px;
 }
 
 .seccion__div-image {
-    width: 25%;
+    width: 12rem;
+}
+
+.btn {
+    padding: .5rem;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+.btn-encriptar {
+    background-color: #f200ff5a;
+}
+
+.btn-encriptar:hover {
+    background-color: #f200ff;
+    color: white;
+    transition: all .25s ease;
+}
+
+.btn-desencriptar, .btn-copiar {
+    background-color: transparent;
+}
+
+.btn-desencriptar:hover, .btn-copiar:hover {
+    background-color: #f200ff;
+    color: white;
+    transition: all .25s ease;
 }
 
 footer {
-    height: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    padding: 1rem;
+    padding-top: 5.5rem;
+}
+
+footer > p {
+    font-size: 1rem;
+    text-align: center;
 }
 
 @media only screen and (max-width: 768px) {
@@ -96,5 +167,19 @@ footer {
 
     .seccion {
         width: 100%;
+    }
+
+    footer {
+        padding-top: 1rem;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .seccion-principal__div-botones {
+        gap: .5rem;
+    }
+
+    .btn {
+        font-size: 20px;;
     }
 }
