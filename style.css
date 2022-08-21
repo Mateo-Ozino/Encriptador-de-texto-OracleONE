@@ -1,10 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root {
+    --bg-color: hsl(49 37% 94%);
+    --typewriterSpeed: 4.5s;
+    --typewriterCharacters: 20;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 img {
@@ -13,8 +19,19 @@ img {
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f200ff2b;
+    background-color: #e5e5f7;
+    opacity: 1;
+    background-image: radial-gradient(#444cf7 0.75px, transparent 0.75px),
+        radial-gradient(#444cf7 0.75px, #e5e5f7 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+}
+
+header {
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main {
@@ -23,13 +40,38 @@ main {
     align-items: center;
     gap: 1rem;
     margin: 1rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 h1 {
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
+    position: relative;
+    width: max-content;
+    font-family: "Source Code Pro", monospace;
+}
+
+h1::before,
+h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+h1::before {
+    background-color: #e5e5f7;
+    animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+h1::after {
+    width: 0.125em;
+    background: black;
+    animation: typewriter var(--typewriterSpeed) steps(var(--typewriterCharacters)) 1s forwards,
+        blink 750ms steps(var(--typewriterCharacters)) infinite;
 }
 
 .seccion {
@@ -40,9 +82,9 @@ h1 {
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.51);
-    -webkit-box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.51);
-    -moz-box-shadow: 0px 0px 17px 3px rgba(0,0,0,0.51);
+    box-shadow: 0px 0px 17px 3px rgba(0, 0, 0, 0.51);
+    -webkit-box-shadow: 0px 0px 17px 3px rgba(0, 0, 0, 0.51);
+    -moz-box-shadow: 0px 0px 17px 3px rgba(0, 0, 0, 0.51);
 }
 
 .seccion-principal {
@@ -59,7 +101,7 @@ h1 {
     gap: 5px;
 }
 
-.seccion-principal__div-info > p {
+.seccion-principal__div-info>p {
     text-align: center;
     font-size: 28px;
     font-weight: 600;
@@ -72,19 +114,20 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: .5rem;
+    gap: 0.5rem;
 }
 
-.seccion-principal__div-input > textarea {
+.seccion-principal__div-input>textarea {
     resize: none;
     width: 100%;
     border: none;
     background: none;
     text-align: center;
     font-size: 23px;
+    outline: none;
 }
 
-.seccion-principal__div-input > input:active {
+.seccion-principal__div-input>input:active {
     border: none;
 }
 
@@ -102,7 +145,7 @@ h1 {
 }
 
 .seccion-resultado-nueva {
-    gap: 16rem;
+    gap: 14rem;
 }
 
 .seccion-resultado__div-aviso {
@@ -120,31 +163,48 @@ h1 {
 }
 
 .btn {
-    padding: .5rem;
+    padding: 0.5rem;
     border-radius: 15px;
     cursor: pointer;
     font-size: 23px;
     font-weight: 600;
 }
 
+.btn:hover {
+    transform: translateY(-3px);
+    filter: drop-shadow(4px 4px #65649574);
+    transition: all 0.2s ease;
+}
+
 .btn-encriptar {
-    background-color: #f200ff5a;
+    background-color: #444cf7;
+    border: solid 2px #444cf7;
+    color: white;
+    transition: all 0.2s ease;
 }
 
 .btn-encriptar:hover {
-    background-color: #f200ff;
-    color: white;
-    transition: all .25s ease;
+    background-color: white;
+    color: #444cf7;
+    border: solid 2px #444cf7;
+    transition: all 0.2s ease;
 }
 
-.btn-desencriptar, .btn-copiar {
-    background-color: transparent;
+.btn-desencriptar,
+.btn-copiar {
+    background-color: #3f9ce0;
+    border: solid 2px #3f9ce0;
+    color: white;
+    border-color: transparent;
+    transition: all 0.2s ease;
 }
 
-.btn-desencriptar:hover, .btn-copiar:hover {
-    background-color: #f200ff;
-    color: white;
-    transition: all .25s ease;
+.btn-desencriptar:hover,
+.btn-copiar:hover {
+    background-color: white;
+    border: solid 2px #3f9ce0;
+    color: #3f9ce0;
+    transition: all 0.2s ease;
 }
 
 footer {
@@ -152,12 +212,24 @@ footer {
     justify-content: center;
     align-items: flex-end;
     padding: 1rem;
-    padding-top: 5.5rem;
+    padding-top: 5rem;
 }
 
-footer > p {
+footer>p {
     font-size: 1rem;
     text-align: center;
+}
+
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -175,11 +247,15 @@ footer > p {
 }
 
 @media only screen and (max-width: 425px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
     .seccion-principal__div-botones {
-        gap: .5rem;
+        gap: 0.5rem;
     }
 
     .btn {
-        font-size: 20px;;
+        font-size: 20px;
     }
 }
